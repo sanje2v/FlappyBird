@@ -6,7 +6,7 @@ using System;
 
 public class GameControllerScript : MonoBehaviour
 {
-    private const int MAX_SECS_PER_LEVEL = 6;
+    private const int MAX_SECS_PER_LEVEL = 20;
 
     private bool m_isGameStarted = false;
     private float m_MoveSpeed = 8.0f;
