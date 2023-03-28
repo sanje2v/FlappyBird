@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -25,7 +23,7 @@ public class PipeMoverScript : MonoBehaviour
         {
             this.transform.position += (Vector3.left * this.m_gameControllerScript.PipeMoveSpeed) * Time.deltaTime;
 
-            if (this.transform.position.x <= PipeMoverScript.DEAD_ZONE)
+            if (this.transform.position.x < PipeMoverScript.DEAD_ZONE)
                 GameObject.Destroy(this.gameObject);
         }
     }

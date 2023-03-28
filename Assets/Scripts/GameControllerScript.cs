@@ -1,19 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 using TMPro;
 using System;
-using UnityEditor.UI;
 
 public class GameControllerScript : MonoBehaviour
 {
     private const int MAX_SECS_PER_LEVEL = 6;
 
     private bool m_isGameStarted = false;
-    private float m_MoveSpeed = 5.0f;
+    private float m_MoveSpeed = 8.0f;
     private int m_Score = 0;
     private int m_Level = 1;
     private float m_LevelTimer = 0.0f;
@@ -39,16 +35,8 @@ public class GameControllerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!this.IsGameStarted)
-        {
-            if (Input.anyKey)
-            {
-                this.m_StartScreen.enabled = false;
-                this.IsGameStarted = true;
-            }
-
+        if (!this.m_isGameStarted)
             return;
-        }
 
         // Game is running
         this.m_LevelTimer += Time.deltaTime;
@@ -92,7 +80,7 @@ public class GameControllerScript : MonoBehaviour
     public void ProgressLevel()
     {
         ++this.m_Level;
-        this.m_Music.GetComponent<AudioSource>().pitch = Math.Min((1.0f + this.Level / 30.0f), 2.0f);
+        this.m_Music.GetComponent<AudioSource>().pitch = Math.Min((1.0f + this.Level / 50.0f), 1.8f);
         this.ShowLevel();
     }
 

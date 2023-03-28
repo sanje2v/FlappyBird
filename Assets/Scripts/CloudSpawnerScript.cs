@@ -32,7 +32,7 @@ public class CloudSpawnerScript : MonoBehaviour
             else
             {
                 this.SpawnCloud();
-                this.m_spawnRate = Random.Range(CloudSpawnerScript.MIN_SPAWN_RATE, CloudSpawnerScript.MAX_SPAWN_RATE);
+                this.m_spawnRate = Random.Range(CloudSpawnerScript.MIN_SPAWN_RATE, CloudSpawnerScript.MAX_SPAWN_RATE) / m_gameControllerScript.Level;
                 this.m_timer = 0.0f;
             }
         }

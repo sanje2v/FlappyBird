@@ -35,7 +35,7 @@ public class PipeSpawnerScript : MonoBehaviour
             else
             {
                 this.SpawnPipe();
-                this.m_spawnRate = Random.Range(PipeSpawnerScript.MIN_SPAWN_RATE, PipeSpawnerScript.MAX_SPAWN_RATE);
+                this.m_spawnRate = Random.Range(PipeSpawnerScript.MIN_SPAWN_RATE, PipeSpawnerScript.MAX_SPAWN_RATE) / m_gameControllerScript.Level;
                 this.m_timer = 0.0f;
             }
         }
